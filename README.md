@@ -28,6 +28,12 @@ To execute any rake/rails command, or to get a shell:
 docker-compose run web COMMAND TO ISSUE (/bin/bash for example)
 ```
 
+When modifiyng the Gemfile or the Docker file, run the following command once again:
+
+```
+docker-compose build
+```
+
 ## Contributing
 
 1. Fork it
