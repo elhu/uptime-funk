@@ -28,6 +28,8 @@ set :rbenv_ruby, File.read('.ruby-version').strip
 set :rbenv_map_bins, %w{rake gem bundle ruby rails whenever}
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 
+set :branch, ENV.fetch('BRANCH', 'master')
+
 namespace :deploy do
 
   after :restart, :clear_cache do
