@@ -25,4 +25,5 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
+  gem 'capistrano-sidekiq'
 end

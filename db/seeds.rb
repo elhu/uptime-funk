@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Operator.create!({
+  name: 'RATP',
+  city: 'Paris',
+  country: 'France',
+  weather_url: 'http://www.ratp.fr/meteo/ajax/data',
+  content_type: 'application/json'
+})
