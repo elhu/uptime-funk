@@ -2,23 +2,17 @@ require 'uri'
 require 'net/http'
 
 class ReportFetcher
-  attr_accessor :url, :formatter
+  attr_accessor :facade
 
-  def initialize(url:, formatter: ReportFormatter::JSON.new)
-    self.url = url
-    self.formatter = formatter
+  def initialize(facade)
+    self.facade = facade
   end
 
   def fetch_and_store_report!
-    store_report(fetch_report)
+    store_report(facade.fetch_report)
   end
 
   private
-  def fetch_report
-    uri = URI(url)
-    formatter.format(Net::HTTP.get(uri))
-  end
-
   def store_report(report)
     WeatherReport.create!(report: report)
   end

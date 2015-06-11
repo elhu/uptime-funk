@@ -12,7 +12,12 @@ class Operator < ActiveRecord::Base
     Thread.current[:current_operator]
   end
 
+  def self.unconfigure
+    Thread.current[:current_operator] = nil
+  end
+
   def configure
     Thread.current[:current_operator] = self
   end
+
 end

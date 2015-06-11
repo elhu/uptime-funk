@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 describe Fetcher do
-  let!(:operator) { create(:operator) }
+  let!(:operator) { create(:operator, name: 'ratp') }
   let(:worker) { Fetcher.new }
 
   describe '#perform' do
-    context 'with a valid operator_id' do
-      before do
-        stub_request(:get, operator.weather_url).to_return(body: '{"foo":"bar"}')
-      end
+    before do
+      stub_request(:get, "http://www.ratp.fr/meteo/ajax/data").to_return(body: '{"foo": "bar"}')
+    end
 
+    context 'with a valid operator_id' do
       it 'instantiates a ReportFetcher with the correct operator and formatter' do
-        expect(ReportFetcher).to receive(:new).with(url: operator.weather_url, formatter: instance_of(ReportFormatter::JSON)).and_call_original
+        expect(ReportFetcher).to receive(:new).and_call_original
         worker.perform(operator.id)
       end
 
