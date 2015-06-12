@@ -1,7 +1,7 @@
 set :output, 'log/cron.log'
 
-env 'PATH', "#{@ruby_path}:/usr/bin:/usr/local/bin:/bin"
-
+job_type :rbenv_rake, %Q{export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/bin:$PATH; eval "$(rbenv init -)"; \
+                         cd :path && bundle exec rake :task --silent :output }
 every 5.minutes do
-  rake "uptime_funk:fetch_all_reports "
+  rbenv_rake "uptime_funk:fetch_all_reports "
 end
