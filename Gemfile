@@ -14,6 +14,7 @@ gem 'json'
 gem 'sidekiq'
 
 gem 'whenever'
+gem 'airbrake'
 
 group :development, :test do
   gem 'database_cleaner'
