@@ -34,6 +34,23 @@ When modifiyng the Gemfile or the Docker file, run the following command once ag
 docker-compose build
 ```
 
+## Deployment
+
+This project can easily be deployed using Capistrano.
+You will need the following installed on the target environment:
+
+* Postgresql (with support for the `jsonb` data type)
+* Redis
+* Monit
+
+For a single-node deployment, add the following:
+
+```
+# config/deploy/production.rb
+
+server 'example.com', user: 'user', roles: %{app db web}
+```
+
 ## Contributing
 
 1. Fork it

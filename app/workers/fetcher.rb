@@ -8,7 +8,7 @@ class Fetcher
 
   private
   def facade_for(operator)
-    case operator.name
+    case operator.name.downcase
     when 'ratp'
       Ratp::Facade.new
     end
