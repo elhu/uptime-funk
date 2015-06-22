@@ -19,6 +19,7 @@ gem 'airbrake'
 group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-support', '~> 3.2.2'
   gem 'webmock'

@@ -2,14 +2,16 @@ require 'uri'
 require 'net/http'
 
 class ReportFetcher
-  attr_accessor :facade
+  attr_accessor :facade, :processor_klass
 
-  def initialize(facade)
+  def initialize(facade, processor_klass)
     self.facade = facade
+    self.processor_klass = processor_klass
   end
 
   def fetch_and_store_report!
-    store_report(facade.fetch_report)
+    report = store_report(facade.fetch_report)
+    processor_klass.new(report).process
   end
 
   private
