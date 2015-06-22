@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617193243) do
+ActiveRecord::Schema.define(version: 20150622201506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150617193243) do
     t.integer  "operator_id"
     t.integer  "duration"
     t.string   "line"
-    t.string   "type"
+    t.string   "outage_type"
     t.string   "cause"
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20150617193243) do
   add_index "outages", ["finished_at"], name: "index_outages_on_finished_at", using: :btree
   add_index "outages", ["line"], name: "index_outages_on_line", using: :btree
   add_index "outages", ["operator_id"], name: "index_outages_on_operator_id", using: :btree
+  add_index "outages", ["outage_type"], name: "index_outages_on_outage_type", using: :btree
   add_index "outages", ["started_at"], name: "index_outages_on_started_at", using: :btree
-  add_index "outages", ["type"], name: "index_outages_on_type", using: :btree
 
   create_table "weather_reports", force: :cascade do |t|
     t.jsonb    "report"

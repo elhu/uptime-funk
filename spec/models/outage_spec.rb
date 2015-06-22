@@ -10,8 +10,8 @@ RSpec.describe Outage, type: :model do
       expect(build(:outage, line: nil)).not_to be_valid
     end
 
-    it 'is not valid with type missing' do
-      expect(build(:outage, type: nil)).not_to be_valid
+    it 'is not valid with outage_type missing' do
+      expect(build(:outage, outage_type: nil)).not_to be_valid
     end
   end
 
