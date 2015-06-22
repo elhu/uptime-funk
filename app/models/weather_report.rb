@@ -6,9 +6,9 @@ class WeatherReport < ActiveRecord::Base
 
   def api_time
     @api_time ||= begin
-      now = Time.now
+      ts = created_at
       api_hour = report['now'].split(':').map(&:to_i)
-      Time.find_zone('Paris').local(now.year, now.month, now.day, api_hour.first, api_hour.last)
+      Time.find_zone('Paris').local(ts.year, ts.month, ts.day, api_hour.first, api_hour.last)
     end
   end
 end
