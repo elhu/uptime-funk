@@ -7,6 +7,7 @@ describe Fetcher do
   describe '#perform' do
     before do
       stub_request(:get, "http://www.ratp.fr/meteo/ajax/data").to_return(body: '{"foo": "bar"}')
+      allow_any_instance_of(Ratp::OutageProcessor).to receive(:process)
     end
 
     context 'with a valid operator_id' do

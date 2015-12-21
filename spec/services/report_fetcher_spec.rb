@@ -3,11 +3,13 @@ require 'rails_helper'
 describe ReportFetcher do
   let(:operator) { create(:operator) }
   let(:facade) { double('facade') }
-  let(:params) { facade }
-  let(:fetcher) { ReportFetcher.new(params) }
+  let(:processor_klass) { Ratp::OutageProcessor }
+  let(:params) { [facade, processor_klass] }
+  let(:fetcher) { ReportFetcher.new(*params) }
 
   before do
     allow(facade).to receive(:fetch_report) { {'foo' => 'bar'} }
+    allow_any_instance_of(processor_klass).to receive(:process)
   end
 
   describe '#fetch_and_store_report!' do

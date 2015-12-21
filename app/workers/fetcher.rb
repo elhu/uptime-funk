@@ -3,14 +3,14 @@ class Fetcher
 
   def perform(operator_id)
     operator = Operator.find(operator_id).configure
-    ReportFetcher.new(facade_for(operator)).fetch_and_store_report!
+    ReportFetcher.new(*params_for(operator)).fetch_and_store_report!
   end
 
   private
-  def facade_for(operator)
+  def params_for(operator)
     case operator.name.downcase
     when 'ratp'
-      Ratp::Facade.new
+      [Ratp::Facade.new, Ratp::OutageProcessor]
     end
   end
 

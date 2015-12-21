@@ -1,0 +1,235 @@
+{
+    "now": "20:05",
+    "status": {
+        "metro": {
+            "icon": "metro",
+            "lines": {
+                "1": {
+                    "icon": "M1",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "10": {
+                    "icon": "M10",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "11": {
+                    "icon": "M11",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "12": {
+                    "icon": "M12",
+                    "level": 11,
+                    "message": "Ts les jours la station Concorde est ferm\u00e9e jusqu'au 10/07/15. (travaux de r\u00e9novation)",
+                    "name": "normal_trav",
+                    "title": "Travaux",
+                    "url": "http://www.ratp.fr/informer/trafic/travaux_ratp.php"
+                },
+                "13": {
+                    "icon": "M13",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "14": {
+                    "icon": "M14",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "2": {
+                    "icon": "M2",
+                    "level": 11,
+                    "message": "05:00, l'arr\u00eat n'est pas marqu\u00e9 \u00e0 Stalingrad jusqu'au 30/08/15 fin de service. (travaux de r\u00e9novation)",
+                    "name": "normal_trav",
+                    "title": "Travaux",
+                    "url": "http://www.ratp.fr/informer/trafic/travaux_ratp.php"
+                },
+                "3": {
+                    "icon": "M3",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "3b": {
+                    "icon": "M3b",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "4": {
+                    "icon": "M4",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "5": {
+                    "icon": "M5",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "6": {
+                    "icon": "M6",
+                    "level": 11,
+                    "message": "05:00, la station Corvisart est ferm\u00e9e jusqu'au 30/08/15 fin de service. (travaux de r\u00e9novation)",
+                    "name": "normal_trav",
+                    "title": "Travaux",
+                    "url": "http://www.ratp.fr/informer/trafic/travaux_ratp.php"
+                },
+                "7": {
+                    "icon": "M7",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "7b": {
+                    "icon": "M7b",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "8": {
+                    "icon": "M8",
+                    "level": 40,
+                    "message": "22/06/15, 19:49, le trafic est interrompu entre Republique et Reuilly-Did. (colis suspect)",
+                    "name": "critique",
+                    "title": "Trafic tr\u00e8s perturb\u00e9",
+                    "url": "http://www.ratp.fr/informer/trafic/trafic.php?cat=1"
+                },
+                "9": {
+                    "icon": "M9",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                }
+            },
+            "name": "M\u00e9tro",
+            "url": "http://www.ratp.fr/informer/trafic/trafic.php?cat=1"
+        },
+        "rer": {
+            "icon": "rer",
+            "lines": {
+                "A": {
+                    "icon": "RA",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "B": {
+                    "icon": "RB",
+                    "level": 30,
+                    "message": "22/06/15, 18:36, le trafic est perturb\u00e9 sur la ligne (malaise voyageur)",
+                    "name": "alerte",
+                    "title": "Trafic perturb\u00e9",
+                    "url": "http://www.ratp.fr/informer/trafic/trafic.php?cat=2"
+                }
+            },
+            "name": "RER",
+            "url": "http://www.ratp.fr/informer/trafic/trafic.php?cat=2"
+        },
+        "tram": {
+            "icon": "tramway",
+            "lines": {
+                "T1": {
+                    "icon": "T1",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T2": {
+                    "icon": "T2",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T3a": {
+                    "icon": "T3a",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T3b": {
+                    "icon": "T3b",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T5": {
+                    "icon": "T5",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T6": {
+                    "icon": "T6",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T7": {
+                    "icon": "T7",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                },
+                "T8": {
+                    "icon": "T8",
+                    "level": 10,
+                    "message": "Trafic normal sur l'ensemble de la ligne.",
+                    "name": "normal",
+                    "title": "Trafic normal",
+                    "url": ""
+                }
+            },
+            "name": "Tramway",
+            "url": "http://www.ratp.fr/informer/trafic/trafic.php?cat=3"
+        }
+    },
+    "unavailable": null
+}
