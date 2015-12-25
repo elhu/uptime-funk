@@ -10,7 +10,7 @@ UptimeFunk is a web-app that provides uptime for the various lines of the Paris 
 
 1. Install [``docker``|https://docs.docker.com/installation/#installation] and [``docker-compose``|https://docs.docker.com/compose/install/].
 2. If you're on OSX, install [``boot2docker``|http://boot2docker.io/] as well
-3. If you like doing things manuall, just disregard all the Docker-foo! 
+3. If you like doing things manuall, just disregard all the Docker-foo!
 
 ### Running the app
 
@@ -48,7 +48,7 @@ For a single-node deployment, add the following:
 ```
 # config/deploy/production.rb
 
-server 'example.com', user: 'user', roles: %{app db web}
+server 'example.com', user: 'user', roles: %w{app db web}
 ```
 
 ## Contributing
