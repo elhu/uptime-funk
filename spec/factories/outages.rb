@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :outage do
     operator
-    line "broken line"
+    line
     outage_type "total outage"
     cause "Because of reasons"
   end

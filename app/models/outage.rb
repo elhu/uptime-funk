@@ -1,6 +1,7 @@
 class Outage < ActiveRecord::Base
   include OperatorSharding
 
+  belongs_to :line
   before_create :set_started_at
 
   validates_presence_of :line, :outage_type

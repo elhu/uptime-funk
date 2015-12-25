@@ -22,7 +22,11 @@ module Ratp
     end
 
     def process_line(line_name, data)
-      ongoing_outage = ongoing_outage_for(line_name)
+      line = Line.where(operator_label: line_name).first
+      # TODO: Notify unknown line
+      return unless line.present?
+
+      ongoing_outage = ongoing_outage_for(line)
       line_state = data['name']
       line_broken = !(line_state.match(/^normal(_trav)?/))
 
@@ -30,7 +34,7 @@ module Ratp
         outage_type = data['title']
         description = data['message']
 
-        outage = Outage.create!(line: line_name, outage_type: outage_type, description: description, started_at: report.api_time)
+        outage = Outage.create!(line: line, outage_type: outage_type, description: description, started_at: report.api_time)
         Rails.logger.info(outage.to_log_string('Creating'))
       elsif !line_broken && ongoing_outage
         ongoing_outage.close!(report.api_time)

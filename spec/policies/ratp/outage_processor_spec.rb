@@ -9,7 +9,7 @@ describe Ratp::OutageProcessor do
   describe '#process' do
     context 'with an ongoing outage' do
       before do
-        @outage = create(:outage, operator: @operator, started_at: 1.day.ago, line: 'RER B', outage_type: 'Trafic perturbé')
+        @outage = create(:outage, operator: @operator, started_at: 1.day.ago, line: Line.where(operator_label: 'Métro 8').first, outage_type: 'Trafic perturbé')
       end
 
       it 'does nothing of the outage is still ongoing' do
@@ -47,7 +47,7 @@ describe Ratp::OutageProcessor do
         }.to_not change(Outage, :count)
       end
 
-      it 'creates an outage if an new outage has been announced' do
+      it 'creates an outage if a new outage has been announced' do
         processor = Ratp::OutageProcessor.new(create(:full_report_with_outage, operator: @operator))
         expect {
           processor.process
@@ -66,7 +66,7 @@ describe Ratp::OutageProcessor do
         processor = Ratp::OutageProcessor.new(create(:full_report_with_outage, operator: @operator))
         processor.process
         outage = Outage.last
-        expect(outage.line).to eq('RER B')
+        expect(outage.line.operator_label).to eq('RER B')
         expect(outage.outage_type).to eq('Trafic perturbé')
       end
     end

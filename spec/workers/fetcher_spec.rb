@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Fetcher do
-  let!(:operator) { create(:operator, name: 'ratp') }
+  let!(:operator) { Operator.where(name: 'RATP').first }
   let(:worker) { Fetcher.new }
 
   describe '#perform' do
