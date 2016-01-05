@@ -41,6 +41,9 @@ GEM
       builder
       multi_json
     arel (6.0.0)
+    autoprefixer-rails (6.2.3)
+      execjs
+      json
     builder (3.2.2)
     capistrano (3.4.0)
       i18n
@@ -84,6 +87,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    font-awesome-rails (4.5.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hitimes (1.2.2)
@@ -214,6 +219,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake
+  autoprefixer-rails
   capistrano
   capistrano-bundler
   capistrano-passenger
@@ -222,6 +228,7 @@ DEPENDENCIES
   capistrano-sidekiq
   database_cleaner
   factory_girl_rails
+  font-awesome-rails
   jquery-rails
   json
   pg

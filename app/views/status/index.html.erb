@@ -9,8 +9,10 @@
         </div>
       <% else %>
         <div class="details outage">
-          <span class="beginning"><%= line.ongoing_outage.started_at %></span>
-          <span class="description"><%= line.ongoing_outage.description %></span>
+          <%= fa_icon "exclamation-triangle" %>
+          <span class="beginning"><%= line.ongoing_outage.started_at.to_formatted_s(:time) %></span>
+          <%= fa_icon "long-arrow-right" %>
+          <span class="description"><%= line.ongoing_outage.description.gsub(/\d{2}\/\d{2}\/\d{2}, \d{2}:\d{2}, /, '').capitalize %></span>
         </div>
       <% end %>
     <% end %>

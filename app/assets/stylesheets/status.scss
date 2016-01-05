@@ -2,11 +2,31 @@ body {
   font-family: Roboto;
 }
 
+header {
+  margin: auto;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
 .status {
+  .line + .line {
+    margin-top: .5em;
+  }
+
   .type-metro + .type-metro, .type-rer + .type-rer, .type-tram + .type-tram {
     .symbole {
       visibility: hidden;
     }
+  }
+
+  .metro {
+    vertical-align: middle;
   }
 
   .normal {
@@ -15,17 +35,10 @@ body {
 
   .details {
     display: inline;
+    margin-left: 1em;
   }
 
   .outage {
     color: #f54728;
-
-    .beginning:before {
-      content: '⚠';
-    }
-
-    .beginning:after {
-      content: '→';
-    }
   }
 }

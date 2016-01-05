@@ -20,6 +20,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'therubyracer'
 
+gem 'font-awesome-rails'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'database_cleaner'
