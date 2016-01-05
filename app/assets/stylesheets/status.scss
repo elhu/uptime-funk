@@ -1,0 +1,31 @@
+body {
+  font-family: Roboto;
+}
+
+.status {
+  .type-metro + .type-metro, .type-rer + .type-rer, .type-tram + .type-tram {
+    .symbole {
+      visibility: hidden;
+    }
+  }
+
+  .normal {
+    color: #66d300;
+  }
+
+  .details {
+    display: inline;
+  }
+
+  .outage {
+    color: #f54728;
+
+    .beginning:before {
+      content: '⚠';
+    }
+
+    .beginning:after {
+      content: '→';
+    }
+  }
+}
