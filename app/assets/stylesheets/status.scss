@@ -1,5 +1,6 @@
 body {
   font-family: Roboto;
+  font-size: 16px;
 }
 
 header {
@@ -14,9 +15,19 @@ main {
 }
 
 
+.fa {
+  display: inline;
+}
+
 .status {
+
   .line + .line {
     margin-top: .5em;
+  }
+
+  .line {
+    display: flex;
+    align-items: center;
   }
 
   .type-metro + .type-metro, .type-rer + .type-rer, .type-tram + .type-tram {
@@ -25,17 +36,16 @@ main {
     }
   }
 
-  .metro {
-    vertical-align: middle;
-  }
-
   .normal {
     color: #66d300;
   }
 
+  .icons {
+    min-width: 5em;
+  }
+
   .details {
-    display: inline;
-    margin-left: 1em;
+    padding-left: .5em;
   }
 
   .outage {

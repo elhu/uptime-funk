@@ -1,8 +1,10 @@
 <div class="status">
   <% @lines.each do |line| %>
     <%= content_tag_for(:div, line, class: ["type-#{line.line_type.gsub('way', '')}"]) do %>
-      <i class="<%= "#{line.line_type.gsub('way', '')}" %> symbole"></i>
-      <i class="<%= "#{line.line_type.gsub('way', '')} ligne#{line.name.gsub('T', '')}" %>"></i>
+      <span class="icons">
+        <i class="<%= "#{line.line_type.gsub('way', '')}" %> symbole"></i>
+        <i class="<%= "#{line.line_type.gsub('way', '')} ligne#{line.name.gsub('T', '')}" %>"></i>
+      </span>
       <% if line.ongoing_outage.nil? %>
         <div class="details normal">
           Trafic normal
