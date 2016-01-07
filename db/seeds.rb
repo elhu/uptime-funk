@@ -16,130 +16,158 @@ operator = Operator.create!({
 Line.create!([{
     operator_id: operator.id,
     line_type: "metro",
+    name: "1",
+    operator_label: "Métro 1",
+    position: 1,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
     name: "2",
-    operator_label: "Métro 2"
-  }, {
-    operator_id: operator.id,
-    line_type: "rer",
-    name: "B",
-    operator_label: "RER B"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T3a",
-    operator_label: "Tramway T3a"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "10",
-    operator_label: "Métro 10"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "13",
-    operator_label: "Métro 13"
+    operator_label: "Métro 2",
+    position: 2,
   }, {
     operator_id: operator.id,
     line_type: "metro",
     name: "3",
-    operator_label: "Métro 3"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "14",
-    operator_label: "Métro 14"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T8",
-    operator_label: "Tramway T8"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "6",
-    operator_label: "Métro 6"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "8",
-    operator_label: "Métro 8"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "1",
-    operator_label: "Métro 1"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T1",
-    operator_label: "Tramway T1"
+    operator_label: "Métro 3",
+    position: 3,
   }, {
     operator_id: operator.id,
     line_type: "metro",
     name: "3b",
-    operator_label: "Métro 3b"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "5",
-    operator_label: "Métro 5"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T5",
-    operator_label: "Tramway T5"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "9",
-    operator_label: "Métro 9"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "12",
-    operator_label: "Métro 12"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "7b",
-    operator_label: "Métro 7b"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T3b",
-    operator_label: "Tramway T3b"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T6",
-    operator_label: "Tramway T6"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "11",
-    operator_label: "Métro 11"
-  }, {
-    operator_id: operator.id,
-    line_type: "metro",
-    name: "7",
-    operator_label: "Métro 7"
-  }, {
-    operator_id: operator.id,
-    line_type: "tramway",
-    name: "T7",
-    operator_label: "Tramway T7"
+    operator_label: "Métro 3b",
+    position: 4,
   }, {
     operator_id: operator.id,
     line_type: "metro",
     name: "4",
-    operator_label: "Métro 4"
+    operator_label: "Métro 4",
+    position: 5,
   }, {
     operator_id: operator.id,
-    line_type: "tramway",
-    name: "T2",
-    operator_label: "Tramway T2"
+    line_type: "metro",
+    name: "5",
+    operator_label: "Métro 5",
+    position: 6,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "6",
+    operator_label: "Métro 6",
+    position: 7,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "7",
+    operator_label: "Métro 7",
+    position: 8,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "7b",
+    operator_label: "Métro 7b",
+    position: 9,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "8",
+    operator_label: "Métro 8",
+    position: 10,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "9",
+    operator_label: "Métro 9",
+    position: 11,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "10",
+    operator_label: "Métro 10",
+    position: 12,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "11",
+    operator_label: "Métro 11",
+    position: 13,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "12",
+    operator_label: "Métro 12",
+    position: 14,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "13",
+    operator_label: "Métro 13",
+    position: 15,
+  }, {
+    operator_id: operator.id,
+    line_type: "metro",
+    name: "14",
+    operator_label: "Métro 14",
+    position: 16,
   }, {
     operator_id: operator.id,
     line_type: "rer",
     name: "A",
-    operator_label: "RER A"}])
+    operator_label: "RER A",
+    position: 1,
+  }, {
+    operator_id: operator.id,
+    line_type: "rer",
+    name: "B",
+    operator_label: "RER B",
+    position: 2,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T1",
+    operator_label: "Tramway T1",
+    position: 1,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T2",
+    operator_label: "Tramway T2",
+    position: 2,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T3a",
+    operator_label: "Tramway T3a",
+    position: 3,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T3b",
+    operator_label: "Tramway T3b",
+    position: 4,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T5",
+    operator_label: "Tramway T5",
+    position: 6,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T6",
+    operator_label: "Tramway T6",
+    position: 7,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T7",
+    operator_label: "Tramway T7",
+    position: 8,
+  }, {
+    operator_id: operator.id,
+    line_type: "tram",
+    name: "T8",
+    operator_label: "Tramway T8",
+    position: 9,
+  }
+])
