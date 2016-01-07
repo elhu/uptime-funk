@@ -20,6 +20,13 @@ main {
 }
 
 .status {
+  margin: 0;
+  max-width: 1024px;
+  padding: 1em;
+  @media (min-width: 450px) {
+    box-shadow: 0 2px 0.2em rgba(0, 0, 0, 0.2), 0 2px 0.2em rgba(0, 0, 0, 0.2);
+  }
+
 
   .line + .line {
     margin-top: .5em;
