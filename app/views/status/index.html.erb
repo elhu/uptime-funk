@@ -1,0 +1,22 @@
+<div class="status">
+  <% @lines.each do |line| %>
+    <%= content_tag_for(:div, line, class: ["type-#{line.line_type.gsub('way', '')}"]) do %>
+      <span class="icons">
+        <i class="<%= line.line_type %> symbole"></i>
+        <i class="<%= "#{line.line_type} ligne#{line.name}" %>"></i>
+      </span>
+      <% if line.ongoing_outage.nil? %>
+        <div class="details normal">
+          Trafic normal
+        </div>
+      <% else %>
+        <div class="details outage">
+          <%= fa_icon "exclamation-triangle" %>
+          <span class="beginning"><%= line.ongoing_outage.started_at.to_formatted_s(:time) %></span>
+          <%= fa_icon "long-arrow-right" %>
+          <span class="description"><%= line.ongoing_outage.description.gsub(/\d{2}\/\d{2}\/\d{2}, \d{2}:\d{2}, /, '').capitalize %></span>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<div>

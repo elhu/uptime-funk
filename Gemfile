@@ -13,6 +13,16 @@ gem 'sidekiq'
 gem 'whenever'
 gem 'airbrake'
 
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'therubyracer'
+
+gem 'font-awesome-rails'
+gem 'autoprefixer-rails'
+
 group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
