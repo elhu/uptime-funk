@@ -18,7 +18,7 @@ module Ratp
 
     private
     def ongoing_outage_for(line)
-      Outage.where(line: line, finished_at: nil).order(started_at: :desc).first
+      Outage.where(line: line).where('upper(boundaries) > now()').order('lower(boundaries) DESC').first
     end
 
     def process_line(line_name, data)
@@ -34,7 +34,7 @@ module Ratp
         outage_type = data['title']
         description = data['message']
 
-        outage = Outage.create!(line: line, outage_type: outage_type, description: description, started_at: report.api_time)
+        outage = Outage.create!(line: line, outage_type: outage_type, description: description, boundaries: ((report.api_time)..(Outage.default_end_time)))
         Rails.logger.info(outage.to_log_string('Creating'))
       elsif !line_broken && ongoing_outage
         ongoing_outage.close!(report.api_time)

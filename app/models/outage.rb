@@ -6,15 +6,27 @@ class Outage < ActiveRecord::Base
 
   validates_presence_of :line, :outage_type
 
+  def self.default_end_time
+    1000.years.from_now
+  end
+
+  def started_at
+    boundaries.begin
+  end
+
+  def finished_at
+    boundaries.end
+  end
+
   def close!(finish = Time.now)
     update_attributes!({
-      finished_at: finish,
-      duration: finish - self.started_at
+      boundaries: (self.boundaries.begin)..finish,
+      duration: finish - self.boundaries.begin
     })
   end
 
   def set_started_at
-    self.started_at ||= Time.now
+    self.boundaries ||= Time.now..(self.class.default_end_time)
   end
 
   def to_log_string(action)
