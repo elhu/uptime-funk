@@ -1,17 +1,22 @@
 body {
   font-family: Roboto;
   font-size: 16px;
+  margin: 0;
 }
 
 header {
   margin: auto;
   text-align: center;
+  background-color: #f9f9f9;
+  padding-top: 1px;
+  height: 100%;
 }
 
 main {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: #f9f9f9;
 }
 
 
@@ -21,8 +26,11 @@ main {
 
 .status {
   margin: 0;
+  min-width: 50vw;
   max-width: 1024px;
   padding: 1em;
+  background-color: #ffffff;
+
   @media (min-width: 450px) {
     box-shadow: 0 2px 0.2em rgba(0, 0, 0, 0.2), 0 2px 0.2em rgba(0, 0, 0, 0.2);
   }
