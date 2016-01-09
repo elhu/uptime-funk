@@ -29,7 +29,7 @@ RSpec.describe Outage, type: :model do
 
     it 'does not override manually set values' do
       past_date = 1.year.ago
-      outage = create(:outage, started_at: past_date)
+      outage = create(:outage, boundaries: past_date..(Time.now))
       expect(outage.started_at).to eq(past_date)
     end
   end

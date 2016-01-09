@@ -29,11 +29,14 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-support', '~> 3.2.2'
-  gem 'webmock'
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'
+end
+
+group :test do
+  gem 'webmock'
 end

@@ -9,12 +9,12 @@ describe Ratp::OutageProcessor do
   describe '#process' do
     context 'with an ongoing outage' do
       before do
-        @outage = create(:outage, operator: @operator, started_at: 1.day.ago, line: Line.where(operator_label: 'Métro 8').first, outage_type: 'Trafic perturbé')
+        @outage = create(:outage, operator: @operator, boundaries: (1.day.ago)..(1000.years.from_now), line: Line.where(operator_label: 'Métro 8').first, outage_type: 'Trafic perturbé')
       end
 
       it 'does nothing of the outage is still ongoing' do
         processor = Ratp::OutageProcessor.new(create(:full_report_with_outage, operator: @operator))
-        expect(@outage.finished_at).to be_nil
+        expect(@outage.finished_at).to be > Time.now
         expect {
           processor.process
         }.not_to change(@outage, :finished_at)
@@ -22,7 +22,7 @@ describe Ratp::OutageProcessor do
 
       it 'closes the outage is if it is over' do
         processor = Ratp::OutageProcessor.new(create(:full_report_without_outage, operator: @operator))
-        expect(@outage.finished_at).to be_nil
+        expect(@outage.finished_at).to be > Time.now
         expect {
           processor.process
         }.to change { @outage.reload.finished_at }
@@ -32,7 +32,7 @@ describe Ratp::OutageProcessor do
         report = create(:full_report_without_outage, operator: @operator)
         allow(report).to receive(:api_time).and_return(1.hour.ago)
         processor = Ratp::OutageProcessor.new(report)
-        expect(@outage.finished_at).to be_nil
+        expect(@outage.finished_at).to be > Time.now
         expect {
           processor.process
         }.to change { @outage.reload.finished_at }.to within(1).of(1.hour.ago)
