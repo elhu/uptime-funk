@@ -53,4 +53,46 @@ RSpec.describe Outage, type: :model do
     end
   end
 
+  describe '.within' do
+    before do
+      7.downto(1) do |x|
+        create(Outage, boundaries: (x.days.ago)..(x - 1).day.ago, description: "#{x} days ago!")
+      end
+    end
+
+    it 'returns all the outages within the period' do
+      outages = Outage.within((3.days.ago)..(1.days.ago)).order("lower(boundaries) DESC")
+      expect(outages.count).to eq(3)
+      expect(outages.pluck(:description)).to eq([
+        "1 days ago!",
+        "2 days ago!",
+        "3 days ago!"
+      ])
+    end
+
+    it 'returns outages that started before the range and finished during' do
+      outages = Outage.within((2.5.days.ago)..(2.days.ago)).order("lower(boundaries) DESC")
+      expect(outages.count).to eq(2)
+      expect(outages.map(&:description)).to eq([
+        "2 days ago!",
+        "3 days ago!"
+      ])
+    end
+
+    it 'returns outages that started within the range and finished after' do
+      outages = Outage.within((1.5.days.ago)..(1.1.days.ago)).order("lower(boundaries) DESC")
+      expect(outages.count).to eq(1)
+      expect(outages.map(&:description)).to eq([
+        "2 days ago!"
+      ])
+    end
+
+    it 'returns outages that started before the range and finished after' do
+      create(Outage, boundaries: (15.day.ago)..(10.day.ago), description: "foobar")
+      outages = Outage.within((13.days.ago)..(12.days.ago))
+      expect(outages.count).to eq(1)
+      expect(outages.first.description).to eq("foobar")
+    end
+  end
+
 end

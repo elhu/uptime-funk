@@ -1,4 +1,3 @@
 # TODO:
 
-* Fix cron issue
-* Setup Airbrake
+* Switch Outage#boundaries index to GiST
