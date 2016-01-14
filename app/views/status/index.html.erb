@@ -17,6 +17,16 @@
           <span class="description"><%= line.ongoing_outage.description.gsub(/\d{2}\/\d{2}\/\d{2}, \d{2}:\d{2}, /, '').capitalize %></span>
         </div>
       <% end %>
+      <% data = [
+        { duration: 0, date: '05/01' },
+        { duration: 0, date: '06/01' },
+        { duration: 700, date: '07/01' },
+        { duration: 0, date: '08/01' },
+        { duration: 0, date: '09/01' },
+        { duration: 7300, date: '10/01' },
+        { duration: 0, date: '11/01' }
+      ] %>
+      <%= react_component('UptimeBlock', data: data) %>
     <% end %>
   <% end %>
 <div>

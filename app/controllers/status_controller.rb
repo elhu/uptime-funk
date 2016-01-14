@@ -29,14 +29,6 @@ class StatusController < ApplicationController
 
   def time_in_bucket(outage, bucket_start, bucket_size)
     bucket_end = bucket_start + bucket_size
-    if outage.started_at > bucket_start && outage.finished_at < bucket_end
-      outage.duration
-    elsif outage.started_at > bucket_start
-      (bucket_end - outage.started_at) % bucket_size
-    elsif outage.finished_at < bucket_end
-      bucket_size - (bucket_end - outage.finished_at)
-    else
-      bucket_size
-    end
+    [bucket_end, outage.finished_at].min - [bucket_start, outage.started_at].max
   end
 end

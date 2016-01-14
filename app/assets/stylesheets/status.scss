@@ -27,7 +27,8 @@ main {
 .status {
   margin: 0;
   min-width: 50vw;
-  max-width: 1024px;
+  max-width: 90vw;
+  // max-width: 1024px;
   padding: 1em;
   background-color: #ffffff;
 
@@ -43,6 +44,7 @@ main {
 
   .line {
     display: flex;
+    flex-flow: wrap;
     align-items: center;
   }
 
@@ -58,10 +60,12 @@ main {
 
   .icons {
     min-width: 5em;
+    flex: 1;
   }
 
   .details {
     padding-left: .5em;
+    flex: 2;
   }
 
   .outage {

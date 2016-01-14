@@ -1,0 +1,64 @@
+.uptime-block {
+  display: flex;
+  min-width: 150px;
+  flex: 2;
+  align-items: flex-end;
+}
+
+.uptime {
+  flex: 1;
+  position: relative;
+
+  & + .uptime {
+    margin-left: 1px;
+  }
+
+  &.ok {
+    height: 60px;
+    background-color: #86c35d;
+  }
+
+  &.critical, &.warning {
+    height: 70px;
+  }
+
+  &.critical {
+    background-color: #dc2620;
+  }
+
+  &.warning {
+    background-color: #ff9e00;
+  }
+}
+
+.uptime-tick {
+  display: none;
+  color: #aaa;
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.8em;
+  left: -1.3em;
+}
+
+.uptime-tick-border {
+  border-right: solid 1px #aaa;
+  height: 5px;
+  position: absolute;
+  bottom: -5px;
+  left: -1px;
+}
+
+.uptime-block > div:nth-child(even) > .uptime-tick {
+  display: block;
+}
+
+.uptime-block > div:first-child * {
+  display: none;
+}
+
+@media (min-width: 850px) {
+// @media (min-width: 450px) {
+  .uptime-tick {
+    display: block;
+  }
+}
