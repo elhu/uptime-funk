@@ -19,7 +19,6 @@ main {
   background-color: #f9f9f9;
 }
 
-
 .fa {
   display: inline;
 }
@@ -28,7 +27,7 @@ main {
   margin: 0;
   min-width: 50vw;
   max-width: 90vw;
-  // max-width: 1024px;
+  max-width: 1024px;
   padding: 1em;
   background-color: #ffffff;
 
@@ -36,7 +35,6 @@ main {
     box-shadow: 0 2px 0.2em rgba(0, 0, 0, 0.2), 0 2px 0.2em rgba(0, 0, 0, 0.2);
     margin-bottom: 1em;
   }
-
 
   .line + .line {
     margin-top: .5em;
@@ -66,6 +64,7 @@ main {
   .details {
     padding-left: .5em;
     flex: 2;
+    min-width: 250px;
   }
 
   .outage {
