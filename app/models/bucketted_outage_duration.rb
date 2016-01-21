@@ -13,8 +13,8 @@ class BuckettedOutageDuration
     raw_outages = Outage.within(time_period_as_time)
 
     raw_outages.each do |curr_outage|
-      buckets[curr_outage.line_id].merge!(bucketted_durations_for(curr_outage)) do |key, prev_val, new_val|
-        prev_val + new_val
+      ticks.each do |bucket_start|
+        buckets[curr_outage.line_id][bucket_start] += time_in_bucket(curr_outage, bucket_start)
       end
     end
     buckets
@@ -27,21 +27,15 @@ class BuckettedOutageDuration
     end.to_h
   end
 
-  def bucketted_durations_for(outage)
-    buckets = {}
-    ticks.each do |bucket_start|
-      time_in_bucket(outage, bucket_start)
-      buckets[bucket_start] = time_in_bucket(outage, bucket_start)
-    end
-    buckets
-  end
-
   def nearest_bucket(t)
     t - t % bucket_size
   end
 
   def time_in_bucket(outage, bucket_start)
     bucket_end = bucket_start + bucket_size
-    [[bucket_end, outage.finished_at.to_i].min - [bucket_start, outage.started_at.to_i].max, 0].max
+    started_at = outage.started_at.to_i
+    finished_at = outage.finished_at.to_i
+    return 0 if started_at > bucket_end or finished_at < bucket_start
+    [bucket_end, finished_at].min - [bucket_start, started_at].max
   end
 end

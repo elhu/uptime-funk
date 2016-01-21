@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'
+  gem 'ruby-prof', require: false
 end
 
 group :test do
