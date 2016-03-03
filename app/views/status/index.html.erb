@@ -7,16 +7,23 @@
       </span>
       <% if line.ongoing_outage.nil? %>
         <div class="details normal">
-          Trafic normal
+          <%= fa_icon "circle", class: "normal" %>
+          <span class="description">
+            Trafic normal
+          </span>
         </div>
       <% else %>
         <div class="details outage">
-          <%= fa_icon "exclamation-triangle" %>
+          <%= fa_icon "exclamation-triangle", class: "outage" %>
           <span class="beginning"><%= line.ongoing_outage.started_at.to_formatted_s(:time) %></span>
           <%= fa_icon "long-arrow-right" %>
-          <span class="description"><%= line.ongoing_outage.description.gsub(/\d{2}\/\d{2}\/\d{2}, \d{2}:\d{2}, /, '').capitalize %></span>
+          <span class="description">
+            <%= line.ongoing_outage.description.gsub(/\d{2}\/\d{2}\/\d{2}, \d{2}:\d{2}, /, '').capitalize %>
+          </span>
         </div>
       <% end %>
+      <%= react_component('UptimeBlock', data: @outages[line.id].map { |date, duration| { duration: duration, date: date } }) %>
+      <%= react_component('UptimePercentage', { percentage: ((@uptime_percentages[line.id] || 1) * 100).round(2), outageCount: (@outages_count[line.id] || 0) }) %>
     <% end %>
   <% end %>
 <div>

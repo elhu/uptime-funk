@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'therubyracer'
+gem 'react-rails', '~> 1.5.0'
 
 gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
@@ -35,6 +36,7 @@ group :development, :test do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv'
   gem 'capistrano-sidekiq'
+  gem 'ruby-prof', require: false
 end
 
 group :test do

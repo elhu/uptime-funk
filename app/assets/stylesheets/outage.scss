@@ -1,0 +1,67 @@
+.uptime-block {
+  display: flex;
+  min-width: 150px;
+  flex: 2;
+  align-items: center;
+
+  .uptime:nth-last-child(-n+7) {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    .uptime:nth-last-child(-n+14) {
+      display: flex;
+    }
+
+  }
+  @media (min-width: 1024px) {
+    .uptime:nth-last-child(-n+21) {
+      display: flex;
+    }
+  }
+  @media (min-width: 1280px) {
+    .uptime {
+      display: flex;
+    }
+  }
+}
+
+.uptime {
+  flex: 1;
+  position: relative;
+  width: 15px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  & + .uptime {
+    margin-left: 2px;
+  }
+
+  &.ok {
+    height: 30px;
+    background-color: $normal;
+  }
+
+  &.critical, &.warning {
+    height: 34px;
+  }
+
+  &.critical {
+    background-color: $outage;
+  }
+
+  &.warning {
+    background-color: $outage;
+  }
+
+  &.dimanche {
+    margin-right: 10px;
+  }
+
+  & > .day {
+    color: #fff;
+    opacity: 0.5;
+  }
+}
