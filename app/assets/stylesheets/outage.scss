@@ -2,63 +2,66 @@
   display: flex;
   min-width: 150px;
   flex: 2;
-  align-items: flex-end;
+  align-items: center;
+
+  .uptime:nth-last-child(-n+7) {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    .uptime:nth-last-child(-n+14) {
+      display: flex;
+    }
+
+  }
+  @media (min-width: 1024px) {
+    .uptime:nth-last-child(-n+21) {
+      display: flex;
+    }
+  }
+  @media (min-width: 1280px) {
+    .uptime {
+      display: flex;
+    }
+  }
 }
 
 .uptime {
   flex: 1;
   position: relative;
+  width: 15px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
 
   & + .uptime {
-    margin-left: 1px;
+    margin-left: 2px;
   }
 
   &.ok {
     height: 30px;
-    background-color: #86c35d;
+    background-color: $normal;
   }
 
   &.critical, &.warning {
-    height: 35px;
+    height: 34px;
   }
 
   &.critical {
-    background-color: #dc2620;
+    background-color: $outage;
   }
 
   &.warning {
-    background-color: #ff9e00;
+    background-color: $outage;
   }
-}
 
-.uptime-tick {
-  display: none;
-  color: #aaa;
-  position: absolute;
-  bottom: -25px;
-  font-size: 0.8em;
-  left: -1.3em;
-}
+  &.dimanche {
+    margin-right: 10px;
+  }
 
-.uptime-tick-border {
-  border-right: solid 1px #aaa;
-  height: 5px;
-  position: absolute;
-  bottom: -5px;
-  left: -1px;
-}
-
-.uptime-block > div:nth-child(even) > .uptime-tick {
-  display: block;
-}
-
-.uptime-block > div:first-child * {
-  display: none;
-}
-
-@media (min-width: 850px) {
-// @media (min-width: 450px) {
-  .uptime-tick {
-    display: block;
+  & > .day {
+    color: #fff;
+    opacity: 0.5;
   }
 }

@@ -1,6 +1,6 @@
 body {
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 12px;
   margin: 0;
 }
 
@@ -25,9 +25,8 @@ main {
 
 .status {
   margin: 0;
-  min-width: 50vw;
   max-width: 90vw;
-  max-width: 1024px;
+  // max-width: 1024px;
   padding: 1em;
   background-color: #ffffff;
 
@@ -53,21 +52,47 @@ main {
   }
 
   .normal {
-    color: #66d300;
+    color: $normal;
   }
 
   .icons {
-    min-width: 5em;
+    min-width: 4em;
     flex: 1;
+    margin-right: 1em;
+
+    i {
+      width: 3em;
+      height: 3em;
+    }
+
+    & + i {
+      font-size: 1.5em;
+    }
   }
 
   .details {
-    padding-left: .5em;
+    padding-left: 1em;
     flex: 2;
     min-width: 250px;
+    margin-right: 1em;
+    font-size: 16px;
   }
 
   .outage {
-    color: #f54728;
+    color: $outage;
+  }
+}
+
+.stats {
+  margin-left: 1em;
+  width: 5.5em;
+
+  .percentage {
+    font-size: 20px;
+
+    &:after {
+      content: "%";
+      float: right;
+    }
   }
 }
