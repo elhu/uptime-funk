@@ -10,7 +10,7 @@ class BuckettedOutageDuration
 
   def fetch
     initialize_buckets
-    raw_outages = Outage.within(time_period_as_time)
+    raw_outages = scope
 
     raw_outages.each do |curr_outage|
       ticks.each do |bucket_start|
@@ -18,6 +18,22 @@ class BuckettedOutageDuration
       end
     end
     buckets
+  end
+
+  def uptime_percentage
+    max_duration = (time_period_as_time.end - time_period_as_time.begin)
+    total_durations.inject({}) do |orig, (k, v)|
+      orig[k] = 1 - v / max_duration.to_f
+      orig
+    end
+  end
+
+  def total_durations
+    scope.group(:line_id).sum(:duration)
+  end
+
+  def outages_count
+    scope.group(:line_id).count
   end
 
   private
@@ -37,5 +53,9 @@ class BuckettedOutageDuration
     finished_at = outage.finished_at.to_i
     return 0 if started_at > bucket_end or finished_at < bucket_start
     [bucket_end, finished_at].min - [bucket_start, started_at].max
+  end
+
+  def scope
+    @scope ||= Outage.within(time_period_as_time)
   end
 end
