@@ -8,7 +8,7 @@ FactoryGirl.define do
     city 'Paris'
     content_type 'application/json'
     country 'France'
-    weather_url 'http://www.tfp.com/meteo/data'
+    report_url 'http://www.tfp.com/meteo/data'
     website 'example.org'
   end
 end

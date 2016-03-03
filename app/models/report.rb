@@ -1,4 +1,4 @@
-class WeatherReport < ActiveRecord::Base
+class Report < ActiveRecord::Base
   include OperatorSharding
 
   # Validations

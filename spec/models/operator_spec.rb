@@ -21,14 +21,14 @@ RSpec.describe Operator, type: :model do
       end
     end
 
-    describe 'weather_url' do
+    describe 'report_url' do
       it 'is invalid if missing' do
-        operator = build(:operator, weather_url: nil)
+        operator = build(:operator, report_url: nil)
         expect(operator).to_not be_valid
       end
 
       it 'is invalid if not a valid url' do
-        operator = build(:operator, weather_url: 'foobar')
+        operator = build(:operator, report_url: 'foobar')
         expect(operator).to_not be_valid
       end
     end

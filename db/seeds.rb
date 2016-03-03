@@ -9,7 +9,7 @@ operator = Operator.create!({
   name: 'RATP',
   city: 'Paris',
   country: 'France',
-  weather_url: 'http://www.ratp.fr/meteo/ajax/data',
+  report_url: 'http://www.ratp.fr/meteo/ajax/data',
   content_type: 'application/json'
 })
 

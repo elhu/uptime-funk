@@ -24,7 +24,7 @@ describe Fetcher do
       it 'creates a new report record for the operator' do
         expect {
           worker.perform(operator.id)
-        }.to change(WeatherReport.where(operator: operator), :count).by(1)
+        }.to change(Report.where(operator: operator), :count).by(1)
       end
     end
 

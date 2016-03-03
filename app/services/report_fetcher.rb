@@ -16,6 +16,6 @@ class ReportFetcher
 
   private
   def store_report(report)
-    WeatherReport.create!(report: report)
+    Report.create!(report: report)
   end
 end
