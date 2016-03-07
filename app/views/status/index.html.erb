@@ -18,12 +18,11 @@
           <span class="beginning"><%= line.ongoing_outage.started_at.to_formatted_s(:time) %></span>
           <%= fa_icon "long-arrow-right" %>
           <span class="description">
-            <%= line.ongoing_outage.description.gsub(/\d{2}\/\d{2}\/\d{2}, \d{2}:\d{2}, /, '').capitalize %>
+            <%= outage_description line.ongoing_outage %>
           </span>
         </div>
       <% end %>
-      <%= react_component('UptimeBlock', data: @outages[line.id].map { |date, duration| { duration: duration, date: date } }) %>
-      <%= react_component('UptimePercentage', { percentage: ((@uptime_percentages[line.id] || 1) * 100).round(2), outageCount: (@outages_count[line.id] || 0) }) %>
+      <%= render "uptime_block", outages: @outages[line.id], percentages: @uptime_percentages[line.id], counts: @outage_counts[line.id] %>
     <% end %>
   <% end %>
 <div>

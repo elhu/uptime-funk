@@ -1,0 +1,2 @@
+<%= react_component('UptimeBlock', data: outages.map { |date, duration| { duration: duration, date: date } }) %>
+<%= react_component('UptimePercentage', { percentage: ((percentages || 1) * 100).round(2), outageCount: (counts || 0) }) %>

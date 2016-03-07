@@ -7,6 +7,6 @@ class StatusController < ApplicationController
     duration_helper = BuckettedOutageDuration.new(time_period: time_period, bucket_size: 1.day)
     @outages = duration_helper.fetch
     @uptime_percentages = duration_helper.uptime_percentage
-    @outages_count = duration_helper.outages_count
+    @outage_counts = duration_helper.outages_count
   end
 end
