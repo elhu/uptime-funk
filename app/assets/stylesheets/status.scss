@@ -45,9 +45,19 @@ main {
     align-items: center;
   }
 
-  .type-metro + .type-metro, .type-rer + .type-rer, .type-tram + .type-tram {
+  .symbole {
+    display: none;
+  }
+
+  @media (min-width: 784px) {
     .symbole {
-      visibility: hidden;
+      display: inline-block;
+    }
+
+    .type-metro + .type-metro, .type-rer + .type-rer, .type-tram + .type-tram {
+      .symbole {
+        visibility: hidden;
+      }
     }
   }
 
@@ -56,9 +66,12 @@ main {
   }
 
   .icons {
-    min-width: 4em;
-    flex: 1;
-    margin-right: 1em;
+    margin-right: 5px;
+    @media (min-width: 784px) {
+      min-width: 4em;
+      flex: 1;
+      margin-right: 1em;
+    }
 
     i {
       width: 3em;
@@ -71,11 +84,21 @@ main {
   }
 
   .details {
-    padding-left: 1em;
-    flex: 2;
-    min-width: 250px;
-    margin-right: 1em;
-    font-size: 16px;
+    .description, .beginning {
+      display: none;
+    }
+
+    @media (min-width: 784px) {
+      padding-left: 1em;
+      flex: 2;
+      min-width: 250px;
+      margin-right: 1em;
+      font-size: 16px;
+
+      .description, .beginning {
+        display: inline-block;
+      }
+    }
   }
 
   .outage {

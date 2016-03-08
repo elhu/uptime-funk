@@ -15,8 +15,10 @@
       <% else %>
         <div class="details outage">
           <%= fa_icon "exclamation-triangle", class: "outage" %>
-          <span class="beginning"><%= line.ongoing_outage.started_at.to_formatted_s(:time) %></span>
-          <%= fa_icon "long-arrow-right" %>
+          <span class="beginning">
+            <%= line.ongoing_outage.started_at.to_formatted_s(:time) %>
+            <%= fa_icon "long-arrow-right" %>
+          </span>
           <span class="description">
             <%= outage_description line.ongoing_outage %>
           </span>

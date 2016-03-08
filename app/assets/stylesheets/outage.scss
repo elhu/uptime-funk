@@ -3,23 +3,27 @@
   min-width: 150px;
   flex: 2;
   align-items: center;
+  margin-left: 5px;
 
   .uptime:nth-last-child(-n+7) {
     display: flex;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 480px) {
+    margin-left: 0;
     .uptime:nth-last-child(-n+14) {
       display: flex;
     }
 
   }
   @media (min-width: 1024px) {
+    margin-left: 0;
     .uptime:nth-last-child(-n+21) {
       display: flex;
     }
   }
   @media (min-width: 1280px) {
+    margin-left: 0;
     .uptime {
       display: flex;
     }
