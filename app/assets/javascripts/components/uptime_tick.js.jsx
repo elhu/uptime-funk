@@ -1,4 +1,4 @@
-var Uptime = React.createClass({
+var UptimeTick = React.createClass({
   propTypes: {
     status: React.PropTypes.string.isRequired,
     date: React.PropTypes.number.isRequired

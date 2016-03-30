@@ -26,5 +26,10 @@
       <% end %>
       <%= render "uptime_block", outages: @outages[line.id], percentages: @uptime_percentages[line.id], counts: @outage_counts[line.id] %>
     <% end %>
+    <%= react_component('Line', {
+      type: line.line_type,
+      name: line.name,
+      outage: line.ongoing_outage
+    }) %>
   <% end %>
 <div>

@@ -17,6 +17,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
+gem 'jbuilder'
 gem 'turbolinks'
 gem 'therubyracer'
 gem 'react-rails', '~> 1.5.0'

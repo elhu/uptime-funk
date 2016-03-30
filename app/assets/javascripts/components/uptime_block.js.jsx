@@ -4,7 +4,7 @@ var UptimeBlock = React.createClass({
   },
 
   render: function() {
-    var uptimeNodes = this.props.data.map(function(item) {
+    var uptimeTickNodes = this.props.data.map(function(item) {
       if (item.duration > 7200) {
         item.status = "critical";
       } else if (item.duration > 0) {
@@ -14,12 +14,12 @@ var UptimeBlock = React.createClass({
       }
 
       return (
-        <Uptime {...item} key={Math.random()} />
+        <UptimeTick {...item} key={Math.random()} />
       )
     });
     return (
       <div className="uptime-block">
-        {uptimeNodes}
+        {uptimeTickNodes}
       </div>
     );
   }
