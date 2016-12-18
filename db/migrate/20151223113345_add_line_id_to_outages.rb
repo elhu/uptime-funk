@@ -2,7 +2,7 @@ class AddLineIdToOutages < ActiveRecord::Migration
   def change
     rename_column :outages, :line, :line_name
     add_column :outages, :line_id, :integer, index: true
-    Operator.first.configure
+    Operator.first&.configure
     Outage.distinct(:line_name).pluck(:line_name).each do |line|
       full_name = line
       type, name = line.split(' ')

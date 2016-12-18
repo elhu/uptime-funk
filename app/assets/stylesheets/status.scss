@@ -78,6 +78,10 @@ main {
       height: 3em;
     }
 
+    a {
+      text-decoration: none; 
+    }
+
     & + i {
       font-size: 1.5em;
     }

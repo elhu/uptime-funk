@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'status#index'
+  root 'lines#index'
+
+  resources 'lines'
 end

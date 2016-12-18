@@ -59,7 +59,7 @@ describe Ratp::OutageProcessor do
         allow(report).to receive(:api_time).and_return(1.hour.ago)
         processor = Ratp::OutageProcessor.new(report)
         processor.process
-        expect(Outage.last.started_at).to be_within(1).of(1.hour.ago)
+        expect(Outage.last.started_at).to be_within(1).of(1.hour.ago.utc)
       end
 
       it 'sets the correct line and outage_type' do

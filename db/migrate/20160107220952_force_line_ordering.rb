@@ -2,7 +2,7 @@ class ForceLineOrdering < ActiveRecord::Migration
   def change
     add_column :lines, :position, :integer, index: true
 
-    Operator.first.configure
+    Operator.first&.configure
 
     # Rename tramway to tram
     Line.where(line_type: 'tramway').update_all(line_type: 'tram')
