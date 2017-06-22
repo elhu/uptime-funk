@@ -6,5 +6,5 @@ job_type :rbenv_rake, %Q{export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/bi
 env 'RAILS_ENV', 'production'
 
 every 5.minutes do
-  rbenv_rake "uptime_funk:fetch_all_reports "
+  # rbenv_rake "uptime_funk:fetch_all_reports "
 end
